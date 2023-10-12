@@ -2,6 +2,8 @@ import 'dotenv/config.js'
 import cors from 'cors';
 import 'express-async-errors';
 import express from 'express';
+import { connection as knexdb } from './database/knex/index.js'
+
 
 import { routes } from './routes/routes.js';
 import { AppError } from './utils/AppError.js';
@@ -9,6 +11,7 @@ import { migrate } from './database/sqlite/migrations/migrate.js';
 import { UPLOAD_FOLDER } from './configs/upload.js';
 
 migrate();
+knexdb.migrate.latest()
 
 const PORT = process.env.PORT || 3333;
 const app = express();
