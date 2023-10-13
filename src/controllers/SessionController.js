@@ -26,6 +26,8 @@ export class SessionController {
       expiresIn,
     });
 
+    delete user.password;
+
     return res.status(201).json({ user, token });
   }
 }

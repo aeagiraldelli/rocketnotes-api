@@ -6,8 +6,13 @@
 /** @type {import('jest').Config} */
 const config = {
   bail: true,
+  clearMocks: true,
   coverageProvider: 'v8',
-  testMatch: ['<rootDir>/src/**/*.spec.js'],
+  testMatch: [
+    '<rootDir>/src/**/*.spec.cjs',
+    '<rootDir>/src/**/*.spec.js',
+    '<rootDir>/src/**/*.spec.mjs',
+  ],
 };
 
 export default config;
