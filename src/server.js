@@ -4,7 +4,6 @@ import 'express-async-errors';
 import express from 'express';
 import { connection as knexdb } from './database/knex/index.js'
 
-
 import { routes } from './routes/routes.js';
 import { AppError } from './utils/AppError.js';
 import { migrate } from './database/sqlite/migrations/migrate.js';
